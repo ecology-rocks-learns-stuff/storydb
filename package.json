@@ -1,0 +1,20 @@
+{
+  "name": "storydb",
+  "version": "1.0.0",
+  "description": "Figuring out my story database structure",
+  "main": "main.js",
+  "repository": "https://github.com/ecology-rocks/storydb",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-prebuilt": "^0.36.5"
+  },
+  "dependencies": {
+    "angular": "^1.4.9",
+    "electron-reload": "^0.2.0",
+    "pouchdb": "^5.3.1"
+  }
+}
