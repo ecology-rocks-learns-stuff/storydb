@@ -2,7 +2,7 @@
 /*global angular, dialog, fs */
 'use strict';
 
-angular.module('textEditor').controller('FileopsController', ['$scope', '$rootScope', 'MyStory', function ($scope, $rootScope, MyStory) {
+angular.module('StoryDb').controller('FileopsController', ['$scope', function ($scope) {
 
     //initialize models
     $scope.story = "";
@@ -44,16 +44,6 @@ angular.module('textEditor').controller('FileopsController', ['$scope', '$rootSc
                 }
             });
         });
-    };
-    
-    
-    this.wordModeInit = function () {
-        //console.log("I'm here!");
-        MyStory.setValue($scope.story);
-        $rootScope.$broadcast('increment-value-event');
-        this.showEditor = false;
-        $scope.showEditor = this.showEditor;
-        console.log($scope.story);
     };
     
     

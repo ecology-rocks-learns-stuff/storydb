@@ -1,14 +1,14 @@
 /*jslint node: true */
 'use strict';
 
+// need to just use pouchDB on front end 
+//and stop trying to get it integrated into electron's version of node.
+
 var remote = require('remote');
 var dialog = remote.require('dialog');
 var angular =   require('angular');
 var fs = require('fs');
-var PouchDB = require('pouchdb');
-
-
-angular.module('textEditor', [])
+angular.module('StoryDb', [])
 
     .factory('MyStory', function () {
     // private
@@ -22,4 +22,4 @@ angular.module('textEditor', [])
                 story = val;
             }
         };
-    });
+    })
