@@ -2,10 +2,12 @@
 /*global angular, dialog, fs */
 'use strict';
 
-angular.module('StoryDb').controller('DatabaseController', ['$scope', function ($scope) {
+angular.module('StoryDb').controller('DatabaseController', ['$scope', '$log', function ($scope, $log) {
 
     //initialize models
     $scope.wordEntry = "cats";
+    
+    
     var db = new PouchDB('wordsDb'),
         doc = { name: 'David' };
 
@@ -24,22 +26,18 @@ angular.module('StoryDb').controller('DatabaseController', ['$scope', function (
         $scope.doc = res;
     }
  
-    db.post(doc)
+    /*db.post(doc)
         .then(get)
         .then(bind)
-        .catch(error);
+        .catch(error);*/
     
-    this.addTodo = function (text) {
+    this.addTodo = function (mytext) {
         var todo = {
             _id: new Date().toISOString(),
-            title: text
+            title: mytext
         };
         
-        db.put(todo, function callback(err, result) {
-            if (!err) {
-                console.log('Successfully posted a todo!');
-            }
-        });
+        db.post(todo).then(get).then(bind).catch(error);
     };
 
 }]);
